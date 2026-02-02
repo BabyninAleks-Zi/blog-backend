@@ -8,11 +8,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 COMPANY_COORDINATES = [55.751244, 37.618423]
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", [])
+ALLOWED_HOSTS= env.list("ALLOWED_HOSTS", [])
 
-SECRET_KEY = env.str("SECRET_KEY", "REPLACE_ME")
+SECRET_KEY = env.str("SECRET_KEY")
 
-DEBUG = env.bool("DEBUG", True)
+DEBUG = env.bool("DEBUG")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -92,7 +92,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = os.getenv('STATIC_URL', '/static/')
+STATIC_URL = os.getenv('STATIC_URL')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
 
@@ -100,7 +100,7 @@ MEDIA_ROOT = os.getenv("MEDIA_ROOT", os.path.join(BASE_DIR, 'media'))
 
 STATIC_ROOT = os.getenv("STATIC_ROOT")
 
-MEDIA_URL = os.getenv('MEDIA_URL', '/media/')
+MEDIA_URL = os.getenv('MEDIA_URL')
 
 INTERNAL_IPS = [
     '127.0.0.1',
